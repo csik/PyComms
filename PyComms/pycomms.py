@@ -1,6 +1,7 @@
 #!/usr/bin/python
 
 # Python Standard Library Imports
+from Adafruit_I2C import Adafruit_I2C
 import smbus
 
 # External Imports
@@ -13,10 +14,9 @@ pass
 # PyComms I2C Base Class (an rewriten Adafruit_I2C pythone class clone)
 # ===========================================================================
 
-class PyComms:
-    def __init__(self, address, bus = smbus.SMBus(0)):
-        self.address = address
-        self.bus = bus
+class PyComms(Adafruit_I2C):
+    def __init__(self, address):
+	Adafruit_I2C.__init__(self, address)
 
     def reverseByteOrder(self, data):
         # Reverses the byte order of an int (16-bit) or long (32-bit) value
