@@ -1,3 +1,7 @@
+Tried cTn-dev's version on BBB with Angstrom, specifically the MPU6050 library.  It didn't work, so I changed it slightly to use AdaFruit I2C library, which is under active develeopment.  Literally two lines diff.  Works now with the 2013.09.04 image.  Haven't tested other sensors.
+
+Original readme below:
+
 PyComms is a simple wrapper class written around the smbus i2c python extension.
 
 I am personally trying to port a few sensor classes from arduino to python, because using i2c sensors became very popular on the Raspberry Pi platform, but there is no "pure python" implementation for any of the common i2c sensors like MPU6050, HMC5883L and many others, thats what this repo is for.
